@@ -139,8 +139,8 @@ This project is licensed under the <b>MIT License</b> — see <a href="https://g
 
 <h2>🤞 Updates and support</h2>
 
-- <a href="https://FallenAssociation.t.me">Updates channel</a>
-- <a href="https://DevilsHeavenMF.t.me">Support group</a>
+- <a href="https://CodeSearchDev.t.me">Updates channel</a>
+- <a href="https://DebugAngels.t.me">Support group</a>
 
 <hr>
 
