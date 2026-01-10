@@ -19,7 +19,7 @@ Supports YouTube, Spotify, Resso, Apple Music, SoundCloud and M3U8 links.
 </a>
 <br>
 
-<img src="https://github.com/AnonymousX1025/AnonXMusic/blob/master/.github/anonx.jpg" width="720" height="auto">
+<img src="https://github.com/MaybeChiku/AnonXMusic/blob/chiku/.github/anonx.jpg" width="720" height="auto">
 
 AnonXMusic lets you stream high-quality and low-latency audio and video playback into telegram group video chats.<br>
 Built with Python, Pyrogram, and Py-TgCalls, it’s optimized for reliability and easy deployment on Heroku, VPS, or Docker.
@@ -42,7 +42,7 @@ Built with Python, Pyrogram, and Py-TgCalls, it’s optimized for reliability an
 
 - <a href="https://www.python.org">Python 3.10+</a> installed  
 - <a href="https://deno.com/">deno</a> & <a href="https://ffmpeg.org//">ffmpeg</a> installed on your system  
-- Required variables mentioned in <a href="https://github.com/AnonymousX1025/AnonXMusic/blob/master/sample.env">sample.env</a>
+- Required variables mentioned in <a href="https://github.com/MaybeChiku/AnonXMusic/blob/chiku/sample.env">sample.env</a>
 
 <details>
     <summary>
@@ -50,7 +50,7 @@ Built with Python, Pyrogram, and Py-TgCalls, it’s optimized for reliability an
     </summary>
 
 ```bash
-git clone https://github.com/AnonymousX1025/AnonXMusic && cd AnonXMusic
+git clone https://github.com/MaybeChiku/AnonXMusic && cd AnonXMusic
 
 # Install dependencies
 pip3 install -U -r requirements.txt
@@ -70,7 +70,7 @@ bash start
     </summary>
 
 > Click on the button below to deploy on Heroku<br>
-    <a href="https://dashboard.heroku.com/new?template=https://github.com/AnonymousX1025/AnonXMusic">
+    <a href="https://dashboard.heroku.com/new?template=https://github.com/MaybeChiku/AnonXMusic">
         <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-black?style=for-the-badge&logo=heroku"/>
     </a>
 </details>
@@ -93,7 +93,7 @@ MONGO_URL=mongodb+srv://
 SESSION=BQgfh...AA
 ```
 
-> 📝 Check <a href="https://github.com/AnonymousX1025/AnonXMusic/blob/master/config.py">config.py</a> for all available options.
+> 📝 Check <a href="https://github.com/MaybeChiku/AnonXMusic/blob/chiku/config.py">config.py</a> for all available options.
 </details>
 
 <hr>
@@ -133,7 +133,7 @@ Contributions are welcome!
 
 <h2>🗒️ License</h2>
 
-This project is licensed under the <b>MIT License</b> — see <a href="https://github.com/AnonymousX1025/AnonXMusic/blob/master/LICENSE">LICENSE</a> for details.
+This project is licensed under the <b>MIT License</b> — see <a href="https://github.com/MaybeChiku/AnonXMusic/blob/chiku/LICENSE">LICENSE</a> for details.
 
 <hr>
 
