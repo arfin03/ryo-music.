@@ -2,7 +2,6 @@
 # Licensed under the MIT License.
 # This file is part of AnonXMusic
 
-
 import asyncio
 
 from pyrogram import enums, errors, types
@@ -17,6 +16,7 @@ def checkUB(play):
             return await m.reply_text(m.lang["play_user_invalid"])
 
         chat_id = m.chat.id
+
         if m.chat.type != enums.ChatType.SUPERGROUP:
             await m.reply_text(m.lang["play_chat_invalid"])
             return await app.leave_chat(chat_id)
@@ -27,7 +27,9 @@ def checkUB(play):
             return await m.reply_text(m.lang["play_usage"])
 
         if len(queue.get_queue(chat_id)) >= config.QUEUE_LIMIT:
-            return await m.reply_text(m.lang["play_queue_full"].format(config.QUEUE_LIMIT))
+            return await m.reply_text(
+                m.lang["play_queue_full"].format(config.QUEUE_LIMIT)
+            )
 
         force = m.command[0].endswith("force") or (
             len(m.command) > 1 and "-f" in m.command[1]
@@ -42,7 +44,7 @@ def checkUB(play):
             if (
                 m.from_user.id not in adminlist
                 and not await db.is_auth(chat_id, m.from_user.id)
-                and not m.from_user.id in app.sudoers
+                and m.from_user.id not in app.sudoers
             ):
                 return await m.reply_text(m.lang["play_admin"])
 
@@ -50,14 +52,12 @@ def checkUB(play):
             client = await db.get_client(chat_id)
             try:
                 member = await app.get_chat_member(chat_id, client.id)
-                if member.status in [
+                if member.status in (
                     enums.ChatMemberStatus.BANNED,
                     enums.ChatMemberStatus.RESTRICTED,
-                ]:
+                ):
                     try:
-                        await app.unban_chat_member(
-                            chat_id=chat_id, user_id=client.id
-                        )
+                        await app.unban_chat_member(chat_id, client.id)
                     except:
                         return await m.reply_text(
                             m.lang["play_banned"].format(
@@ -69,7 +69,10 @@ def checkUB(play):
                         )
             except errors.ChatAdminRequired:
                 return await m.reply_text(m.lang["admin_required"])
-            except (errors.UserNotParticipant, errors.exceptions.bad_request_400.UserNotParticipant):
+            except (
+                errors.UserNotParticipant,
+                errors.exceptions.bad_request_400.UserNotParticipant,
+            ):
                 if m.chat.username:
                     invite_link = m.chat.username
                     try:
